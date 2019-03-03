@@ -1,0 +1,25 @@
+repository:
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  has_downloads: false
+  default_branch: master
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+
+labels:
+  - { "name":"bug", "color":"d73a4a" }
+  - { "name":"duplicate", "color":"e2c66a" }
+  - { "name":"enhancement", "color":"792ccc"}
+  - { "name":"pinned", "color":"4491ea" }
+  - { "name":"security", "color":"e82023" }
+  - { "name":"wip", "color":"e82023" }
+  - { "name":"wontfix", "color":"efaa97" }
+
+branches:
+  - name: master
+    protection:
+      required_status_checks:
+        strict: true
+      enforce_admins: true
