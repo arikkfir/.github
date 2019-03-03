@@ -1,0 +1,6 @@
+deleteCommand: false
+closeSourceIssue: true
+lockSourceIssue: true
+mentionAuthors: true
+keepContentMentions: true
+moveLabels: true
