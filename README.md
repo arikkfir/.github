@@ -1,0 +1,2 @@
+# .github
+Probot shared settings.
