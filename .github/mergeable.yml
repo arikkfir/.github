@@ -1,0 +1,33 @@
+version: 2
+mergeable:
+  - when: pull_request.*
+    validate:
+      - do: title
+        must_exclude:
+          regex: ^\[WIP\]
+          message: This pull request is still a work-in-progress.
+      - do: label
+        must_exclude:
+          regex: wip
+          message: This pull request is still a work-in-progress.
+      - do: description
+        no_empty:
+          enabled: true
+          message: Description matter and should not be omitted. Please detail **what** was changed, and **why**.
+      - do: assignee
+        min:
+          count: 1
+          message: Only assigned pull requests can be merged.
+      - do: milestone
+        no_empty:
+          enabled: true
+          message: Pull request must be associated with a milestone.
+#    pass:
+#    fail:
+#      - do: checks,
+#        # Can be: success, failure, neutral, cancelled, timed_out, or action_required
+#        status: failure
+#        payload:
+#          title: 'Mergeable Run have been Completed!'
+#          summary: `All the validators have return 'pass'! \n Here are some stats of the run: \n {{validationCount}} validations were ran`
+#    error:
